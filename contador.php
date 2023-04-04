@@ -1,14 +1,22 @@
 <?php
 require_once('./models/Contador.php');
-$contador = new Contador($_REQUEST['salida']??0);
+
+
+// lo que cuenta al salir la página:
+
+$contador = new Contador(
+ $_REQUEST['salida']??$_COOKIE['numero']??0);
+
 
 extract($_REQUEST);
 
 if (isset($sumar)) {
  $contador->incrementar();
+ setcookie('numero', $contador->getResult());
 }
 if (isset($restar)) {
  $contador->decrementar();
+ setcookie('numero', $contador->getResult());
 }
 ?>
 
