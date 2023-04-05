@@ -56,4 +56,4 @@ class Profesor extends Persona
 $xurxo = new Profesor('32443r32', 'pepe', 54, true);
 array_push($xurxo->asignaturas, ['Desarrollo Web', 'BBDD']);
 
-print_r($xurxo);
+print_r($xurxo)
